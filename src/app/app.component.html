@@ -1,0 +1,15 @@
+<router-outlet></router-outlet>
+<div class="container justify-content-center">
+    <div class="col-8 mx-auto text-center">
+        <h3 class="mt-5 text-center">Users</h3>
+        <a class="list-group-item list-group-item-info justify-content-center"
+           *ngFor="let user of users | async">{{user?.name}}
+            {{user | json}}
+            <span class="badge badge-pill badge-primary ml-2 p-2">{{user?.username}}</span>
+        </a>
+        <button class="btn btn-success m-3" (click)="addUser()">Add User</button>
+    </div>
+
+    <div class="bg-warning" *ngFor="let s of search">{{s | json}}</div>
+</div>
+
